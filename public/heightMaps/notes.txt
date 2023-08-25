@@ -1,0 +1,6 @@
+1 = snowdonia
+2 = scottish highlands
+3 = alps
+
+
+generated with https://tangrams.github.io/heightmapper/#10.125/46.5984/11.4019

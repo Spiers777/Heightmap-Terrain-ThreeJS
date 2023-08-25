@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 // Create a scene
 const scene = new THREE.Scene();
@@ -162,13 +162,14 @@ const animate = () => {
     camera.position.x += velocity * Math.cos(cameraAngle);
     camera.position.y += velocity * Math.sin(cameraAngle);
     camera.position.z -= 0.8 * mouseVertical * 0.005;
-
-    plane.position.x = camera.position.x + 0.25 * Math.cos(cameraAngle)
-    plane.position.y = camera.position.y + 0.25 * Math.sin(cameraAngle)
-    plane.position.z = camera.position.z - 0.07
-    plane.rotation.x = -mouseVertical * 0.3 + Math.PI/2
-    plane.rotation.y = cameraAngle + Math.PI/2
-    plane.rotation.z = mousePos * 0.3
+    if(plane){
+        plane.position.x = camera.position.x + 0.25 * Math.cos(cameraAngle)
+        plane.position.y = camera.position.y + 0.25 * Math.sin(cameraAngle)
+        plane.position.z = camera.position.z - 0.07
+        plane.rotation.x = -mouseVertical * 0.3 + Math.PI/2
+        plane.rotation.y = cameraAngle + Math.PI/2
+        plane.rotation.z = mousePos * 0.3
+    }
 
     time += 0.0005; //Distance
     directionalLight.position.x += Math.cos(time) * 0.003; //Speed

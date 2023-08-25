@@ -3,9 +3,14 @@
     "three": "^0.155.0"
   },
   "devDependencies": {
+    "gh-pages": "^6.0.0",
     "vite": "^4.4.9"
   },
   "scripts": {
+    "build": "vite build",
+    "predeploy": "npm run build",
+    "preview": "vite preview --PORT 8080",
+    "deploy": "gh-pages -d dist",
     "start": "npx vite --host --port 3000 --open"
   }
 }
