@@ -141,7 +141,7 @@ const touchPos = (e) => {
     let evt = (typeof e.originalEvent === 'undefined') ? e : e.originalEvent;
     let touch = evt.touches[0] || evt.changedTouches[0];
     mousePos = touch.pageX / window.innerWidth - 0.5
-    mouseVertical = touch.pageY / window.innerHeight - 1
+    mouseVertical = touch.pageY / window.innerHeight - 0.6
 }
 document.addEventListener("touchstart", touchPos, false);
 document.addEventListener("touchmove", touchPos, false);
