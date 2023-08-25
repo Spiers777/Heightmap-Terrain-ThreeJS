@@ -1,5 +1,6 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+// import * as THREE from 'three';
+// import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 // Create a scene
 const scene = new THREE.Scene();
@@ -30,7 +31,7 @@ heightMap.wrapS = THREE.RepeatWrapping;
 heightMap.wrapT = THREE.RepeatWrapping;
 waterMap.wrapS = THREE.RepeatWrapping;
 waterMap.wrapT = THREE.RepeatWrapping;
-heightMap.repeat.set(1, 1);
+heightMap.repeat.set(1.5, 1.5);
 waterMap.repeat.set(10, 10);
 
 // Create a standard material with displacement map
@@ -41,7 +42,7 @@ grassTexture.repeat.set(25, 25);
 const material = new THREE.MeshPhongMaterial({
     wireframe: false,
     displacementMap: heightMap,
-    displacementScale: 1.2,
+    displacementScale: 1,
     map: grassTexture,
     shininess: 2,
 });
